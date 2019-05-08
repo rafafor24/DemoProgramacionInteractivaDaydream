@@ -2,6 +2,10 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - EventListener
+    - EventListenerAsignacion
+    - EventListenerCrear
+    - EventListenerEjecutarComandos
+    - EventListenerPlataforma
     - EventListenerVars
     - Gvr.Internal.InstantPreview
     - GvrArmModel
@@ -50,6 +54,8 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
+      Script: {instanceID: 0}
+    - Class: 54
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
@@ -106,31 +112,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10674}
     - Class: 114
-      Script: {instanceID: 10800}
+      Script: {instanceID: 10718}
     - Class: 114
-      Script: {instanceID: 10904}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 10920}
+      Script: {instanceID: 10804}
     - Class: 114
-      Script: {instanceID: 10934}
+      Script: {instanceID: 10908}
     - Class: 114
-      Script: {instanceID: 11056}
+      Script: {instanceID: 10924}
     - Class: 114
-      Script: {instanceID: 11084}
+      Script: {instanceID: 10938}
     - Class: 114
-      Script: {instanceID: 11144}
+      Script: {instanceID: 11060}
     - Class: 114
-      Script: {instanceID: 11336}
+      Script: {instanceID: 11088}
     - Class: 114
-      Script: {instanceID: 11348}
+      Script: {instanceID: 11148}
     - Class: 114
-      Script: {instanceID: 11532}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11688}
+      Script: {instanceID: 11352}
     - Class: 114
-      Script: {instanceID: 11764}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 11794}
+      Script: {instanceID: 11692}
+    - Class: 114
+      Script: {instanceID: 11766}
+    - Class: 114
+      Script: {instanceID: 11770}
+    - Class: 114
+      Script: {instanceID: 11780}
+    - Class: 114
+      Script: {instanceID: 11802}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -208,7 +222,7 @@ ScriptsOnlyBuild:
     className: MultiplatformMeshSelector
   - hash:
       serializedVersion: 2
-      Hash: 5369f4e440a9352dcd607eb83a98ba76
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EventListenerVars
@@ -694,7 +708,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 715c5002c03e0b28c5fd094619b303a4
+      Hash: 3a087ad9eead368ac2dc1af2c2161525
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EventListener
@@ -986,6 +1000,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: GoogleARCore.Examples.ObjectManipulation
     className: ElevationManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: 91f63b3d84e548b3a3f055b5f933b8c7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EventListenerAsignacion
+  - hash:
+      serializedVersion: 2
+      Hash: 0141781673a929c62ce37f997e4b90d9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EventListenerCrear
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1372,6 +1398,12 @@ ScriptsOnlyBuild:
     className: EmulatorClientSocket
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EventListenerPlataforma
+  - hash:
+      serializedVersion: 2
       Hash: 7a6837fe2e1bc65ba24bcd2a74cc367f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1382,6 +1414,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: GoogleVR.HelloVR
     className: HelloVRManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EventListenerEjecutarComandos
   - hash:
       serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
@@ -1421,4 +1459,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/TestScene.unity
-  playerPath: D:/U/Clases 2019-1/RealidadMixta/Mirage/Mirage/testDayDream2.apk
+  playerPath: D:/U/Clases 2019-1/RealidadMixta/Mirage/Mirage/testDayDream3.apk
