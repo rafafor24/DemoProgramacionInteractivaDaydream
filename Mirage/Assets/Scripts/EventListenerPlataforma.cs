@@ -33,6 +33,7 @@ public class EventListenerPlataforma : MonoBehaviour
             elRenderer.material.color = Color.green;
             objetoAMover = GameObject.FindGameObjectWithTag("AsignacionAMover");
             objetoAMover.transform.position = new Vector3(gameObject.transform.position.x + cantObjetos - 3.5f, 8.5f, gameObject.transform.position.z + cantObjetos - 1.5f);
+            objetoAMover.transform.rotation = new Quaternion(0,-180,0,0);
             objetoAMover.tag = "Asignacion";
             var theScript = objetoAMover.GetComponentInChildren<EventListenerAsignacion>();
             theScript.clickeado = false;
@@ -84,8 +85,51 @@ public class EventListenerPlataforma : MonoBehaviour
             string[] ladosOperador = ladosIgual[1].Split(operador[0]);
                 print(ladosOperador[0] + "---" + ladosOperador[1]);
                 textoVar = GameObject.Find("VarShow"+ ladosIgual[0]).GetComponent<Text>();
-                var i = int.Parse(ladosOperador[0]);
-                var j = int.Parse(ladosOperador[1]);
+            var i = 0;
+            var j = 0;
+            if (ladosOperador[0] == "X")
+            {
+                i = int.Parse(GameObject.Find("VarShowX").GetComponent<Text>().text);
+            }
+            else if (ladosOperador[0] == "Y")
+            {
+                i = int.Parse(GameObject.Find("VarShowY").GetComponent<Text>().text);
+            }
+            else if (ladosOperador[0] == "Z")
+            {
+                i = int.Parse(GameObject.Find("VarShowZ").GetComponent<Text>().text);
+            }
+            else if (ladosOperador[0] == "W")
+            {
+                i = int.Parse(GameObject.Find("VarShowW").GetComponent<Text>().text);
+            }
+            else
+            {
+                i = int.Parse(ladosOperador[0]);
+            }
+
+            if (ladosOperador[1] == "X")
+            {
+                j = int.Parse(GameObject.Find("VarShowX").GetComponent<Text>().text);
+            }
+            else if (ladosOperador[1] == "Y")
+            {
+                j = int.Parse(GameObject.Find("VarShowY").GetComponent<Text>().text);
+            }
+            else if (ladosOperador[1] == "Z")
+            {
+                j = int.Parse(GameObject.Find("VarShowZ").GetComponent<Text>().text);
+            }
+            else if (ladosOperador[1] == "W")
+            {
+                j = int.Parse(GameObject.Find("VarShowW").GetComponent<Text>().text);
+            }
+            else
+            {
+                j = int.Parse(ladosOperador[1]);
+            }
+
+            
             if (operador=="+")
             {
                 i = i+j;
