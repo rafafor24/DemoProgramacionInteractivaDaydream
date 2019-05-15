@@ -7,6 +7,10 @@ TagManager:
   - Valor
   - Asignacion
   - AsignacionAMover
+  - AsignacionEnBase
+  - Condicion
+  - CondicionAMover
+  - CondicionEnBase
   layers:
   - Default
   - TransparentFX

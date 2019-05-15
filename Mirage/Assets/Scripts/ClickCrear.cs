@@ -31,7 +31,7 @@ public class ClickCrear : MonoBehaviour
         if(textoVar.text!="")
         {
             var instanciaX=Instantiate(myPrefab, new Vector3(-7f, 4.5f, -2), Quaternion.identity);
-            var theScriptX = instanciaX.GetComponentInChildren<CuboSelect>();
+            var theScriptX = instanciaX.GetComponentInChildren<AsignSelect>();
             theScriptX.texto = "X="+textoVar.text;
             textoVar.text = "";
         }
@@ -39,7 +39,7 @@ public class ClickCrear : MonoBehaviour
         if (textoVar.text != "")
         {
             var instanciaY = Instantiate(myPrefab, new Vector3(-7f, 4.5f, 0), Quaternion.identity);
-            var theScriptY = instanciaY.GetComponentInChildren<CuboSelect>();
+            var theScriptY = instanciaY.GetComponentInChildren<AsignSelect>();
             theScriptY.texto = "Y="+textoVar.text;
             textoVar.text = "";
         }
@@ -47,7 +47,7 @@ public class ClickCrear : MonoBehaviour
         if (textoVar.text != "")
         {
             var instanciaZ = Instantiate(myPrefab, new Vector3(-7f, 4.5f, 2), Quaternion.identity);
-            var theScriptZ = instanciaZ.GetComponentInChildren<CuboSelect>();
+            var theScriptZ = instanciaZ.GetComponentInChildren<AsignSelect>();
             theScriptZ.texto = "Z=" + textoVar.text;
             textoVar.text = "";
         }
@@ -55,7 +55,7 @@ public class ClickCrear : MonoBehaviour
         if (textoVar.text != "")
         {
             var instanciaW = Instantiate(myPrefab, new Vector3(-7f, 4.5f, 4), Quaternion.identity);
-            var theScriptW = instanciaW.GetComponentInChildren<CuboSelect>();
+            var theScriptW = instanciaW.GetComponentInChildren<AsignSelect>();
             theScriptW.texto = "W=" + textoVar.text;
             textoVar.text = "";
         }
