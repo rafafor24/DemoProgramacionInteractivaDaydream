@@ -200,12 +200,10 @@ public class Base : MonoBehaviour
             //forma no generalizada leyendo las 4 variables iniciales, se pude crear metodo que lea variables existentes creadas por el usuario
             if (ladosOperador[0] == "X")
             {
-                print(GameObject.Find("VarShowX").GetComponent<Text>().text);
                 i = int.Parse(GameObject.Find("VarShowX").GetComponent<Text>().text);
             }
             else if (ladosOperador[0] == "Y")
             {
-                print(GameObject.Find("VarShowY").GetComponent<Text>().text);
                 i = int.Parse(GameObject.Find("VarShowY").GetComponent<Text>().text);
             }
             else if (ladosOperador[0] == "Z")

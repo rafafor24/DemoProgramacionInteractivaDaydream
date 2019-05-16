@@ -19,6 +19,6 @@ public class Floating : MonoBehaviour
     {
         Vector3 pos = transform.position;
         float newY = Mathf.Sin(Time.time * speed);
-        transform.position = (new Vector3(pos.x, 1.65f+(yin* height), pos.z) );
+        transform.position = (new Vector3(pos.x, yin+(newY* height), pos.z) );
     }
 }

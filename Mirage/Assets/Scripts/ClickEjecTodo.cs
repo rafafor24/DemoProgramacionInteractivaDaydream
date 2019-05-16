@@ -26,14 +26,18 @@ public class ClickEjecTodo : MonoBehaviour
 
     public void OnClick()
     {
+        StartCoroutine(Example());
+    }
+
+    IEnumerator Example()
+    {
         elRenderer.material.color = Color.blue;
         bases = GameObject.FindGameObjectsWithTag("Base");
         foreach (GameObject bas in bases)
         {
-            //var theScript = bas.GetComponent<Base>();
-            //theScript.ejecutarTodos();
-            print(bas.name);
+            var theScript = bas.GetComponent<Base>();
+            theScript.ejecutarTodos();
+            yield return new WaitForSeconds(5);
         }
-        
     }
 }

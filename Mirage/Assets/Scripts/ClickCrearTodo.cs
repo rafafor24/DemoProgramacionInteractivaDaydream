@@ -30,8 +30,18 @@ public class ClickCrearTodo : MonoBehaviour
         elRenderer.material.color = Color.blue;
         textoVar = GameObject.FindGameObjectWithTag("Valor").GetComponent<Text>();
         var instancia = Instantiate(myPrefab, new Vector3(spawner.transform.position.x, spawner.transform.position.y+10f, spawner.transform.position.z), Quaternion.identity);
-        var theScript = instancia.GetComponentInChildren<AsignSelect>();
-        theScript.texto = textoVar.text;
-        textoVar.text = "";  
+        if (spawner.name == "SpawnAsig")
+        {
+            var theScript = instancia.GetComponentInChildren<AsignSelect>();
+            theScript.texto = textoVar.text;
+            textoVar.text = "";
+        }
+        else
+        {
+            var theScript = instancia.GetComponentInChildren<CondSelect>();
+            theScript.texto = textoVar.text;
+            textoVar.text = "";
+        }
+        
     }
 }

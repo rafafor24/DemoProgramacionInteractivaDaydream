@@ -195,13 +195,16 @@
     <Compile Include="Assets\Scripts\ClickMusica.cs" />
     <Compile Include="Assets\Scripts\ClickReset.cs" />
     <Compile Include="Assets\Scripts\ClickTecla.cs" />
+    <Compile Include="Assets\Scripts\ClickTeclaVar.cs" />
     <Compile Include="Assets\Scripts\CondSelect.cs" />
+    <Compile Include="Assets\Scripts\CrearTeclasVar.cs" />
     <Compile Include="Assets\Scripts\EjecutarBase.cs" />
     <Compile Include="Assets\Scripts\Floating.cs" />
     <Compile Include="Assets\Scripts\PlayMusic.cs" />
     <Compile Include="Assets\Scripts\RemoveCube.cs" />
     <Compile Include="Assets\Scripts\SwitchCiclo.cs" />
     <Compile Include="Assets\Scripts\VarAsign.cs" />
+    <Compile Include="Assets\Scripts\Variable.cs" />
     <Compile Include="Assets\Scripts\XYZWShow\ActualText.cs" />
     <Compile Include="Assets\Scripts\XYZWShow\WText.cs" />
     <Compile Include="Assets\Scripts\XYZWShow\XText.cs" />
