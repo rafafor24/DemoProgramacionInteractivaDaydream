@@ -11,6 +11,7 @@ TagManager:
   - Condicion
   - CondicionAMover
   - CondicionEnBase
+  - Base
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,13 @@ public class Base : MonoBehaviour
         condicion = true;
         strCond = "";
         inCiclo = false;
+        transform.parent.LookAt(new Vector3(0f, 0f, -2f));
+
+    }
+
+    void Update()
+    {
+       
     }
 
     public void setInCiclo(bool set)
@@ -109,19 +116,35 @@ public class Base : MonoBehaviour
 
     public void ejecutarTodos()
     {
-        if (strCond != "")
-        {
+        
+        if (inCiclo)
+        {       
+            int maximo = 0;
             evaluarCondicion();
-
-        }
-
-        if (condicion)
-        {
-            foreach (string comando in listaComandos)
+            while (condicion&&maximo<100)
             {
-                ejecutar(comando);
+                evaluarCondicion();
+                foreach (string comando in listaComandos)
+                {
+                    ejecutar(comando);
+                }
+                maximo++;
             }
         }
+        else
+        {
+            if (strCond != "")
+            {
+                evaluarCondicion();
+            }
+            if (condicion)
+            {
+                foreach (string comando in listaComandos)
+                {
+                    ejecutar(comando);
+                }
+            }
+        }        
     }
 
     public void deleteCube(int pos)
@@ -351,6 +374,27 @@ public class Base : MonoBehaviour
         }        
     }
 
-    
-        
+    private void OnCollisionEnter(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            print(contact.otherCollider.name);
+
+            /*var ausio = contact.otherCollider.gameObject.GetComponent<AudioSource>();
+            print(contact.otherCollider.name);
+            var clips = Resources.Load("MusicaSonidos/Impacto") as AudioClip;
+            if (ausio)
+            {
+                print("enif");
+
+                ausio.clip = clips;
+                ausio.Play();
+                var clip2 = Resources.Load("MusicaSonidos/ClickCubo") as AudioClip;
+                ausio.clip = clip2;
+            }*/
+
+        }
+    }
+
+
 }

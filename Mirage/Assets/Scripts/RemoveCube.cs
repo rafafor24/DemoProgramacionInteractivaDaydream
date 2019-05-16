@@ -31,7 +31,8 @@ public class RemoveCube : MonoBehaviour
         if (objetoAMover)
         {
             objetoAMover.transform.position= new Vector3(objetoAMover.transform.position.x, objetoAMover.transform.position.y + 8.5f, objetoAMover.transform.position.z+5f);
-            objetoAMover.transform.GetChild(0).transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 8.5f, gameObject.transform.position.z+5f);
+            var spawner = GameObject.Find("SpawnAsig");
+            objetoAMover.transform.GetChild(0).transform.position = new Vector3(spawner.transform.position.x, spawner.transform.position.y + 10f, spawner.transform.position.z);
             objetoAMover.transform.GetChild(0).transform.rotation = new Quaternion(0, -180, 0, 0);
             objetoAMover.tag = "Asignacion";
             var scriptCube = objetoAMover.GetComponentInChildren<AsignSelect>();
@@ -45,7 +46,8 @@ public class RemoveCube : MonoBehaviour
         if (objetoAMover)
         {
             objetoAMover.transform.position = new Vector3(objetoAMover.transform.position.x, objetoAMover.transform.position.y + 8.5f, objetoAMover.transform.position.z + 5f);
-            objetoAMover.transform.GetChild(0).transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 8.5f, gameObject.transform.position.z + 5f);
+            var spawner = GameObject.Find("SpawnCond");
+            objetoAMover.transform.GetChild(0).transform.position = new Vector3(spawner.transform.position.x, spawner.transform.position.y + 10f, spawner.transform.position.z);
             objetoAMover.transform.GetChild(0).transform.rotation = new Quaternion(0, -180, 0, 0);
             objetoAMover.tag = "Condicion";
             var scriptCube = objetoAMover.GetComponentInChildren<CondSelect>();

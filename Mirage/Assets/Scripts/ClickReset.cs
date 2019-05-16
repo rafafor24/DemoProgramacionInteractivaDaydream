@@ -26,6 +26,8 @@ public class ClickReset : MonoBehaviour
     public void OnClick()
     {
         elRenderer.material.color = Color.blue;
+        textoVar = GameObject.FindGameObjectWithTag("Valor").GetComponent<Text>();
+        textoVar.text = "";
         textoVar = GameObject.Find("VarShowX").GetComponent<Text>();
         textoVar.text = "";
         textoVar = GameObject.Find("VarShowY").GetComponent<Text>();

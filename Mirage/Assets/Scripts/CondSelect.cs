@@ -10,7 +10,9 @@ public class CondSelect : MonoBehaviour
     public bool clickeado;
     public Material seleccionado;
     public Material click;
+    private AudioSource sound;
     private int posInBase;//1,2,3,4
+    private GameObject jugador;
     public bool inBase;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,16 @@ public class CondSelect : MonoBehaviour
         miTextMesh.text = texto;
         clickeado = false;
         materialinicial = elRenderer.material;
+        sound = GetComponent<AudioSource>();
+        jugador = GameObject.Find("Head");
         inBase = false;
+    }
+
+    void Update()
+    {
+        miTextMesh.transform.LookAt(new Vector3(0f, 0.9f, -2f));
+
+        miTextMesh.transform.Rotate(new Vector3(0f, 180f, 0f));
     }
 
     public void OnEnter()
@@ -42,6 +53,8 @@ public class CondSelect : MonoBehaviour
 
     public void OnClick()
     {
+        sound.Play();
+
         if (inBase)
         {
             if (!clickeado)

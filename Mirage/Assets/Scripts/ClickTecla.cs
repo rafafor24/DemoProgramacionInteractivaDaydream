@@ -7,12 +7,14 @@ public class ClickTecla : MonoBehaviour
     private Text texto;
     public TextMesh textoASumar;
     private Color colorinicial;
+    private AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
         elRenderer=gameObject.GetComponent<Renderer>();
         texto = GameObject.FindGameObjectWithTag("Valor").GetComponent<Text>();
         colorinicial = elRenderer.material.color;
+        sound = GetComponent<AudioSource>();
     }
 
     public void OnEnter()
@@ -27,6 +29,7 @@ public class ClickTecla : MonoBehaviour
 
     public void OnClick()
     {
+        sound.Play();
         elRenderer.material.color = Color.blue;
         texto.text += textoASumar.text;
     }
