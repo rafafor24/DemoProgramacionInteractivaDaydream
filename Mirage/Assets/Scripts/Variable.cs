@@ -8,17 +8,36 @@ public class Variable : MonoBehaviour
     public string value;
     public string nombre;
     public bool isArr;
+    public TextMesh textNombre;
+    private TextMesh texto;
+    public TextMesh textValue;
+
     // Start is called before the first frame update
     void Start()
     {
+        texto = GameObject.FindGameObjectWithTag("Valor").GetComponent<TextMesh>();
 
-   
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnEnter()
     {
-        
+        textNombre.color = Color.yellow;
+        textValue.color = Color.yellow;
+    }
+
+    public void OnExit()
+    {
+        textNombre.color = Color.white;
+        textValue.color = Color.white;
+    }
+
+    public void OnClick()
+    {
+        textNombre.color = Color.blue;
+        textValue.color = Color.blue;
+        texto.text += nombre;
+        var scriptTablero = texto.GetComponent<SelectVar>();
+        scriptTablero.setids(id);
     }
 
     public int getId()
@@ -39,9 +58,7 @@ public class Variable : MonoBehaviour
     public void setNombre(string param)
     {
         nombre = param;
-        TextMesh nombreMesh = gameObject.transform.GetChild(0).GetComponent<TextMesh>();
-        nombreMesh.text =":"+ param;
-
+        textNombre.text =":"+ param;
     }
 
     public string getValue()
@@ -52,8 +69,7 @@ public class Variable : MonoBehaviour
     public void setValue(string param)
     {
         value = param;
-        TextMesh valorMesh = gameObject.transform.GetChild(1).GetComponent<TextMesh>();
-        valorMesh.text = param;
+        textValue.text = param;
     }
 
     public bool isArray()

@@ -14,7 +14,7 @@ public class AsignSelect : MonoBehaviour
     private AudioSource sound;
     public bool inBase;
     private GameObject jugador;
-    // Start is called before the first frame update
+    private int[] ids;
     void Start()
     {
         elRenderer = gameObject.GetComponent<Renderer>();
@@ -28,6 +28,14 @@ public class AsignSelect : MonoBehaviour
         jugador = GameObject.Find("Head");
     }
 
+    public void setIds(int[] param)
+    {
+        ids = param;
+    }
+    public int[] getIds()
+    {
+        return ids;
+    }
     void Update()
     {
         miTextMesh.transform.LookAt(new Vector3(0f, 0.9f, -2f));
@@ -108,7 +116,6 @@ public class AsignSelect : MonoBehaviour
     {
         foreach (ContactPoint contact in collision.contacts)
         {
-            print(contact.otherCollider.name);
             if(contact.otherCollider.name=="Cilindro"|| contact.otherCollider.name == "Cubo")
             {
                 var clips = Resources.Load("MusicaSonidos/Impact") as AudioClip;

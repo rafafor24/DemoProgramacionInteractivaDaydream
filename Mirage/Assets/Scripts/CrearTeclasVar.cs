@@ -36,7 +36,7 @@ public class CrearTeclasVar : MonoBehaviour
             var scriptVar = instanciaVariable.GetComponent<Variable>();
             scriptVar.id=cantVars;
             scriptVar.setNombre(textoVar.text);
-            scriptVar.setValue("Test");
+            scriptVar.setValue("Vacio");
             scriptVar.isArr=false;
             cantVars++;
             textoVar.text = "";

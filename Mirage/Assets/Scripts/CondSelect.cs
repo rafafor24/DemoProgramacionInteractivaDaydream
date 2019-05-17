@@ -14,7 +14,7 @@ public class CondSelect : MonoBehaviour
     private int posInBase;//1,2,3,4
     private GameObject jugador;
     public bool inBase;
-    // Start is called before the first frame update
+    private int[] ids;
     void Start()
     {
         elRenderer = gameObject.GetComponent<Renderer>();
@@ -27,6 +27,15 @@ public class CondSelect : MonoBehaviour
         inBase = false;
     }
 
+    public void setIds(int[] param)
+    {
+        ids = param;
+    }
+
+    public int[] getIds()
+    {
+        return ids;
+    }
     void Update()
     {
         miTextMesh.transform.LookAt(new Vector3(0f, 0.9f, -2f));

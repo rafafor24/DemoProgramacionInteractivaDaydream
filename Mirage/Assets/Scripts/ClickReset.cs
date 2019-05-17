@@ -5,7 +5,7 @@ public class ClickReset : MonoBehaviour
 {
     private Renderer elRenderer;
     private Color colorinicial;
-    private Text textoVar;
+    private TextMesh textoVar;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +26,6 @@ public class ClickReset : MonoBehaviour
     public void OnClick()
     {
         elRenderer.material.color = Color.blue;
-        textoVar = GameObject.FindGameObjectWithTag("Valor").GetComponent<Text>();
-        textoVar.text = "";
-        textoVar = GameObject.Find("VarShowX").GetComponent<Text>();
-        textoVar.text = "";
-        textoVar = GameObject.Find("VarShowY").GetComponent<Text>();
-        textoVar.text = "";
-        textoVar = GameObject.Find("VarShowZ").GetComponent<Text>();
-        textoVar.text = "";
-        textoVar = GameObject.Find("VarShowW").GetComponent<Text>();
-        textoVar.text = "";
+        textoVar = GameObject.FindGameObjectWithTag("Valor").GetComponent<TextMesh>();
     }
 }

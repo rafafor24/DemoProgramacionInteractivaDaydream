@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class ClickTecla : MonoBehaviour
 {
     private Renderer elRenderer;
-    private Text texto;
+    private TextMesh texto;
     public TextMesh textoASumar;
     private Color colorinicial;
     private AudioSource sound;
@@ -12,7 +11,7 @@ public class ClickTecla : MonoBehaviour
     void Start()
     {
         elRenderer=gameObject.GetComponent<Renderer>();
-        texto = GameObject.FindGameObjectWithTag("Valor").GetComponent<Text>();
+        texto = GameObject.FindGameObjectWithTag("Valor").GetComponent<TextMesh>();
         colorinicial = elRenderer.material.color;
         sound = GetComponent<AudioSource>();
     }
