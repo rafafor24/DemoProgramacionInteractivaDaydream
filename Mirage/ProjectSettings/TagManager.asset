@@ -14,6 +14,10 @@ TagManager:
   - Base
   - Variable
   - Variables
+  - If
+  - While
+  - Asig
+  - Cierre
   layers:
   - Default
   - TransparentFX

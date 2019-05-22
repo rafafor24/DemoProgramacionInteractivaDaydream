@@ -26,5 +26,6 @@ public class EjecutarBase : MonoBehaviour
         elRenderer.material.color = Color.blue;
         var theScript=gameObject.transform.parent.GetComponentInChildren<Base>();
         theScript.ejecutarTodos();
+        theScript.mostrarCodigo();
     }
 }

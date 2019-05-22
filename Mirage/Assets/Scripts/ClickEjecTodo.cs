@@ -36,8 +36,9 @@ public class ClickEjecTodo : MonoBehaviour
         foreach (GameObject bas in bases)
         {
             var theScript = bas.GetComponent<Base>();
+            theScript.mostrarCodigo();
             theScript.ejecutarTodos();
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(3);
         }
     }
 }

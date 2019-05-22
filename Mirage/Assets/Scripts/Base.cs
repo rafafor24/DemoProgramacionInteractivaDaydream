@@ -6,11 +6,11 @@ public class Base : MonoBehaviour
     private GameObject objetoAMover;
     private int cantAsignaciones;
     private int cantCondiciones;
-    private string[] listaComandos = { "", "", "", "" };
+    public string[] listaComandos = { "", "", "", "" };
     public int[][] matrizIdsAsign;
     public int[][] matrizIdsCond;
     public bool condicion;
-    private string strCond;
+    public string strCond;
     private TextMesh textoVar;
     private Color colorinicial;
     public bool inCiclo;
@@ -220,24 +220,25 @@ public class Base : MonoBehaviour
             }
             string[] ladosOperador = strCond.Split(operador[0]);
 
-            
+            //de momento funciona var=numero pero no numero=var
             string[] valores = getValoresVariables(idsVarsEjecucion);
-            if (valores[1] == "")
+            print("0:"+valores[0] +"1:"+ valores[1] +"2:"+ valores[2]);
+            if (valores[0] == "")
             {
                 i = int.Parse(ladosOperador[0]);
             }
             else
             {
-                i = int.Parse(valores[1]);
+                i = int.Parse(valores[0]);
             }
-            if (valores[2] == "")
+            if (valores[1] == "")
             {
                 j = int.Parse(ladosOperador[1]);
 
             }
             else
             {
-                j = int.Parse(valores[2]);
+                j = int.Parse(valores[1]);
             }
 
             //forma no generalizada leyendo las 4 variables iniciales, se pude crear metodo que lea variables existentes creadas por el usuario
@@ -312,7 +313,7 @@ public class Base : MonoBehaviour
     {
         condicion = true;
         strCond = "";
-        Array.Copy(vacio, matrizIdsCond[pos - 1], 10);
+        Array.Copy(vacio, matrizIdsCond[0], 10);
 
     }
 
@@ -495,6 +496,46 @@ public class Base : MonoBehaviour
             }*/
 
         }
+    }
+
+    public void mostrarCodigo()
+    {
+
+        TextMesh elIf = GameObject.FindGameObjectWithTag("If").GetComponent<TextMesh>();
+        TextMesh elWhile = GameObject.FindGameObjectWithTag("While").GetComponent<TextMesh>();
+        TextMesh elCierre = GameObject.FindGameObjectWithTag("Cierre").GetComponent<TextMesh>();
+        TextMesh elAsig = GameObject.FindGameObjectWithTag("Asig").GetComponent<TextMesh>();
+
+        elIf.text = "";
+        elWhile.text = "";
+
+        elCierre.text = "";
+        elAsig.text = "";
+
+        bool visibleCierre = false;
+        if (inCiclo)
+        {
+            elWhile.text = "while(" + strCond + ") {";
+            visibleCierre = true;
+            elCierre.color = Color.blue;
+        }
+        else if (!(strCond == ""))
+        {
+            elIf.text = "if(" + strCond + ") {";
+            visibleCierre = true;
+            elCierre.color = Color.yellow;
+        }
+        int i = 0;
+        string asignacion = listaComandos[i];
+        print(asignacion);
+        while (asignacion != "")
+        {
+            elAsig.text += asignacion + ";\n";
+            elCierre.text += "\n";
+            i++;
+            asignacion = listaComandos[i];
+        }
+        if (visibleCierre) { elCierre.text += "}"; }
     }
 
 
