@@ -17,13 +17,16 @@ public class Base : MonoBehaviour
     public Material seleccion;
     public Material ciclo;
     public Material noCiclo;
-    private int pos;
+    public int pos;
     private int[] vacio;
+    private string codigoEscritoTotal;
+    public string strIds;
+
     void Start()
     {
         matrizIdsAsign=new int[5][];
         matrizIdsCond= new int[5][];
-        vacio =new int[]{ -1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+        vacio =new int[20]{ -1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,-1,-1};
         elRenderer = gameObject.GetComponent<Renderer>();
         colorinicial = elRenderer.material.color;
         cantAsignaciones = 0;
@@ -33,6 +36,7 @@ public class Base : MonoBehaviour
         inCiclo = false;
         transform.parent.LookAt(new Vector3(0f, 0f, -2f));
         pos = 0;
+        codigoEscritoTotal = "";
     }
 
     void Update()
@@ -80,24 +84,33 @@ public class Base : MonoBehaviour
 
     public void OnClick()
     {
+        
         elRenderer.material.color = Color.blue;
         objetoAMover = GameObject.FindGameObjectWithTag("CondicionAMover");
-        if (objetoAMover)
+        if(cantCondiciones <= 1)
         {
-            strCond = objetoAMover.GetComponentInChildren<TextMesh>().text;
-            objetoAMover.transform.position = new Vector3(gameObject.transform.position.x + 2, gameObject.transform.position.y + 8.5f, gameObject.transform.position.z);
-            objetoAMover.transform.rotation = new Quaternion(0, -180, 0, 0);
-            objetoAMover.transform.GetChild(0).transform.position = new Vector3(gameObject.transform.position.x + 2, gameObject.transform.position.y + 8.5f, gameObject.transform.position.z);
-            objetoAMover.transform.GetChild(0).transform.rotation = new Quaternion(0, -180, 0, 0);
-            objetoAMover.tag = "Condicion";
-            var scriptCond = objetoAMover.GetComponentInChildren<CondSelect>();
-            matrizIdsCond[cantCondiciones] = scriptCond.getIds();
-            scriptCond.clickeado = false;
-            scriptCond.setInBase(true);
-            scriptCond.materialOriginal();
-            cantCondiciones++;
+            if (objetoAMover)
+            {
+                strCond = objetoAMover.GetComponentInChildren<TextMesh>().text;
+                objetoAMover.transform.position = new Vector3(gameObject.transform.position.x + 2, gameObject.transform.position.y + 8.5f, gameObject.transform.position.z);
+                objetoAMover.transform.rotation = new Quaternion(0, -180, 0, 0);
+                objetoAMover.transform.GetChild(0).transform.position = new Vector3(gameObject.transform.position.x + 2, gameObject.transform.position.y + 8.5f, gameObject.transform.position.z);
+                objetoAMover.transform.GetChild(0).transform.rotation = new Quaternion(0, -180, 0, 0);
+                objetoAMover.tag = "Condicion";
+                var scriptCond = objetoAMover.GetComponentInChildren<CondSelect>();
+                matrizIdsCond[cantCondiciones] = scriptCond.getIds();
+                scriptCond.clickeado = false;
+                scriptCond.setInBase(true);
+                scriptCond.materialOriginal();
+                cantCondiciones++;
+            }
         }
-        
+        else
+        {
+            elRenderer.material.color = Color.red;
+        }
+
+
         if (cantAsignaciones <= 3)
         {
             
@@ -113,15 +126,20 @@ public class Base : MonoBehaviour
                 var theScript = objetoAMover.GetComponentInChildren<AsignSelect>();
                 matrizIdsAsign[cantAsignaciones] = theScript.getIds();
                 theScript.clickeado = false;
-                theScript.setPosInBase(cantAsignaciones + 1, true);
+                print(cantAsignaciones);
+                theScript.setPosInBase(++cantAsignaciones, true);
+                print(cantAsignaciones);
                 Renderer rendObjeto = objetoAMover.GetComponentInChildren<Renderer>();
                 theScript.materialOriginal();
-                cantAsignaciones++;
             }            
         }
         else
         {
             elRenderer.material.color = Color.red;
+        }
+        foreach (int id in matrizIdsAsign[0])
+        {
+            strIds += id;
         }
     }
 
@@ -134,11 +152,12 @@ public class Base : MonoBehaviour
             evaluarCondicion();
             while (condicion&&maximo<10)
             {
-                evaluarCondicion();                
+                evaluarCondicion();
+                int posTemp = pos;
                 foreach (string comando in listaComandos)
                 {
-                    ejecutar(comando,pos);
-                    pos++;
+                    ejecutar(comando, posTemp);
+                    posTemp++;
                 }
                 maximo++;
             }
@@ -162,23 +181,20 @@ public class Base : MonoBehaviour
         pos = 0;
     }
 
-    public void deleteCube(int pos)
-    {
+    public void deleteCube(int posparam)
+    {        
+        listaComandos[posparam-1] = "";
+        Array.Copy(vacio,matrizIdsAsign[posparam - 1],10 );  
+        int posTemp = posparam;
+        while (4 - posTemp != 0)
+        {
+            listaComandos[posTemp - 1] = listaComandos[posTemp];
+            matrizIdsAsign[posTemp - 1] = matrizIdsAsign[posTemp];
+            posTemp++;
+        }
+        print(posparam);
+            
         cantAsignaciones--;
-        listaComandos[pos-1] = "";
-        while (4 - pos != 0)
-        {
-            listaComandos[pos - 1] = listaComandos[pos];
-            pos++;
-        }
-        
-        Array.Copy(vacio,matrizIdsAsign[pos - 1],10 );
-         
-        while (4 - pos != 0)
-        {
-            matrizIdsAsign[pos - 1] = matrizIdsAsign[pos];
-            pos++;
-        }
     }
 
     private void evaluarCondicion()
@@ -314,17 +330,21 @@ public class Base : MonoBehaviour
         condicion = true;
         strCond = "";
         Array.Copy(vacio, matrizIdsCond[0], 10);
+        cantCondiciones--;
 
     }
 
-    private void ejecutar(string entrada, int pos)
+    private void ejecutar(string entrada, int posparam)
     {
         if (entrada != "")
         {
             bool esCte = false;
             var i = 0;
             var j = 0;
-            int[] idsVarsEjecucion = matrizIdsAsign[pos];
+            int[] idsVarsEjecucion = matrizIdsAsign[posparam];
+            print("poses:" + posparam);
+            print("idsvarejecen 0:" + idsVarsEjecucion[0]);
+
             string[] dividirPorIgual = entrada.Split("="[0]);
             var variables = GameObject.FindGameObjectsWithTag("Variable");
             int result = 0;
@@ -368,6 +388,8 @@ public class Base : MonoBehaviour
             {
                 string[] ladosOperador = dividirPorIgual[1].Split(operador[0]);
                 string[] valores = getValoresVariables(idsVarsEjecucion);
+
+                print("V0:" + valores[0] + "V1:" + valores[1] + "V2:" + valores[2]);
                 if (valores[1] == "")
                 {
                     i = int.Parse(ladosOperador[0]);
@@ -385,49 +407,6 @@ public class Base : MonoBehaviour
                 {
                     j = int.Parse(valores[2]);
                 }
-
-
-                /*if (ladosOperador[0] == "X")
-                {
-                    i = int.Parse(GameObject.Find("VarShowX").GetComponent<Text>().text);
-                }
-                else if (ladosOperador[0] == "Y")
-                {
-                    i = int.Parse(GameObject.Find("VarShowY").GetComponent<Text>().text);
-                }
-                else if (ladosOperador[0] == "Z")
-                {
-                    i = int.Parse(GameObject.Find("VarShowZ").GetComponent<Text>().text);
-                }
-                else if (ladosOperador[0] == "W")
-                {
-                    i = int.Parse(GameObject.Find("VarShowW").GetComponent<Text>().text);
-                }
-                else
-                {
-                    i = int.Parse(ladosOperador[0]);
-                }
-
-                if (ladosOperador[1] == "X")
-                {
-                    j = int.Parse(GameObject.Find("VarShowX").GetComponent<Text>().text);
-                }
-                else if (ladosOperador[1] == "Y")
-                {
-                    j = int.Parse(GameObject.Find("VarShowY").GetComponent<Text>().text);
-                }
-                else if (ladosOperador[1] == "Z")
-                {
-                    j = int.Parse(GameObject.Find("VarShowZ").GetComponent<Text>().text);
-                }
-                else if (ladosOperador[1] == "W")
-                {
-                    j = int.Parse(GameObject.Find("VarShowW").GetComponent<Text>().text);
-                }
-                else
-                {
-                    j = int.Parse(ladosOperador[1]);
-                }*/
 
                 if (operador == "+")
                 {
@@ -517,17 +496,19 @@ public class Base : MonoBehaviour
         {
             elWhile.text = "while(" + strCond + ") {";
             visibleCierre = true;
-            elCierre.color = Color.blue;
+            elCierre.color = new Color(0, 0, 253f / 255f);
+            codigoEscritoTotal += elWhile.text;
         }
         else if (!(strCond == ""))
         {
             elIf.text = "if(" + strCond + ") {";
             visibleCierre = true;
-            elCierre.color = Color.yellow;
+            elCierre.color = new Color(255f/255f, 201f/255f, 118f / 255f);
+            codigoEscritoTotal += elIf.text;
         }
         int i = 0;
         string asignacion = listaComandos[i];
-        print(asignacion);
+        //print(asignacion);
         while (asignacion != "")
         {
             elAsig.text += asignacion + ";\n";
@@ -535,8 +516,17 @@ public class Base : MonoBehaviour
             i++;
             asignacion = listaComandos[i];
         }
-        if (visibleCierre) { elCierre.text += "}"; }
+        codigoEscritoTotal += elAsig.text;
+        if (visibleCierre)
+        {
+            elCierre.text += "}";
+            codigoEscritoTotal += "}";
+        }
     }
 
-
+    public void agregarCodigoTotal()
+    {
+        TextMesh elTotal = GameObject.FindGameObjectWithTag("TodoElCodigo").GetComponent<TextMesh>();
+        elTotal.text += codigoEscritoTotal;
+    }
 }

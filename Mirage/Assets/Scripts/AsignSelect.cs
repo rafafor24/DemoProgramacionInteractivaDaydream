@@ -10,11 +10,12 @@ public class AsignSelect : MonoBehaviour
     public bool clickeado;
     public Material seleccionado;
     public Material click;
-    private int posInBase;//1,2,3,4
+    public int posInBase;//1,2,3,4
     private AudioSource sound;
     public bool inBase;
     private GameObject jugador;
-    private int[] ids;
+    public int[] ids;
+    public string strIds;
     void Start()
     {
         elRenderer = gameObject.GetComponent<Renderer>();
@@ -41,6 +42,9 @@ public class AsignSelect : MonoBehaviour
         miTextMesh.transform.LookAt(new Vector3(0f, 0.9f, -2f));
 
         miTextMesh.transform.Rotate(new Vector3(0f, 180f, 0f));
+
+        
+        
     }
 
     public void OnEnter()
@@ -61,6 +65,11 @@ public class AsignSelect : MonoBehaviour
 
     public void OnClick()
     {
+        foreach (int id in ids)
+        {
+            strIds += id;
+        }
+
         sound.Play();
         if (inBase)
         {

@@ -58,7 +58,7 @@ public class Variable : MonoBehaviour
     public void setNombre(string param)
     {
         nombre = param;
-        textNombre.text =":"+ param;
+        textNombre.text =param+"=";
     }
 
     public string getValue()

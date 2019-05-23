@@ -27,5 +27,6 @@ public class ClickReset : MonoBehaviour
     {
         elRenderer.material.color = Color.blue;
         textoVar = GameObject.FindGameObjectWithTag("Valor").GetComponent<TextMesh>();
+        textoVar.text = "";
     }
 }

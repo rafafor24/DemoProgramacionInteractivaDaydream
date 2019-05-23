@@ -41,6 +41,7 @@ public class RemoveCube : MonoBehaviour
             var scriptBase = gameObject.transform.parent.GetComponentInChildren<Base>();
             scriptBase.deleteCube(scriptCube.getPosInBase());
             scriptCube.setPosInBase(0, false);
+            scriptCube.setIds(new int[100] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 , -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 , -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 , -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 , -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 });
         }
         objetoAMover = GameObject.FindGameObjectWithTag("CondicionEnBase");
         if (objetoAMover)
@@ -56,6 +57,8 @@ public class RemoveCube : MonoBehaviour
             var scriptBase = gameObject.transform.parent.GetComponentInChildren<Base>();
             scriptBase.deleteCond();
             scriptCube.setInBase(false);
+            scriptCube.setIds(new int[100] { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 });
+
         }
 
     }

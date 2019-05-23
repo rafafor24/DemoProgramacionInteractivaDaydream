@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 172663932929625748}
   - component: {fileID: 6221278078937507267}
   - component: {fileID: 6833567908851773166}
-  - component: {fileID: 5689881540115624381}
   - component: {fileID: 1800876267506230285}
+  - component: {fileID: 2806562863327250090}
   m_Layer: 0
   m_Name: BotonSwitch
   m_TagString: Untagged
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901597465869188250}
-  m_LocalRotation: {x: 0, y: 0.46174863, z: 0, w: 0.8870109}
-  m_LocalPosition: {x: 2.08, y: 0.25, z: 1.45}
-  m_LocalScale: {x: 3, y: 0.24, z: 3}
+  m_LocalRotation: {x: 0.6830127, y: 0.18301274, z: -0.18301274, w: 0.6830127}
+  m_LocalPosition: {x: 2.19, y: 0.27, z: 2.94}
+  m_LocalScale: {x: 2, y: 0.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3351304953924991125}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 55, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 30, z: 0}
 --- !u!33 &172663932929625748
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6e5c254bbd5d28741bb33499c6baafac, type: 2}
+  - {fileID: 2100000, guid: ba2ad784964d99843a0c46f2c9f911b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,19 +144,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!65 &5689881540115624381
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901597465869188250}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.85295105, y: 2, z: 0.2859896}
-  m_Center: {x: -0.0010677378, y: 0, z: 0.35700554}
 --- !u!114 &1800876267506230285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,9 +157,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inCiclo: 0
-  ciclo: {fileID: 2100000, guid: 6e5c254bbd5d28741bb33499c6baafac, type: 2}
-  noCiclo: {fileID: 2100000, guid: b8f543e2f90e29b4c902641ab305d195, type: 2}
+  ciclo: {fileID: 2100000, guid: ba2ad784964d99843a0c46f2c9f911b2, type: 2}
+  noCiclo: {fileID: 2100000, guid: 0ef31a9b12c6de142a3e4b1aeaf25524, type: 2}
   seleccion: {fileID: 2100000, guid: 9f0b21e3018e0904383f5ca5e58ee4d0, type: 2}
+--- !u!64 &2806562863327250090
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901597465869188250}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &3119203228984800187
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +221,7 @@ GameObject:
   - component: {fileID: 416602940440662261}
   - component: {fileID: 3778289518486422997}
   - component: {fileID: 5650189873220967477}
-  - component: {fileID: 7598340563432446728}
+  - component: {fileID: 7750334653760051496}
   m_Layer: 0
   m_Name: BotonEjecutar
   m_TagString: Untagged
@@ -235,13 +236,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5163232768026829669}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: 0.25, z: 2.512}
-  m_LocalScale: {x: 3, y: 0.24, z: 3}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.27, z: 3.62}
+  m_LocalScale: {x: 2, y: 0.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3351304953924991125}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &7617650342852099256
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -267,7 +268,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0e6dea455a5ebda4cbc17a9cabae156f, type: 2}
+  - {fileID: 2100000, guid: 5fc6c50fa24690c4eb6f2bcbf9e52050, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -363,8 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f1bc6fd91b5c34da06585c441a79a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &7598340563432446728
-BoxCollider:
+--- !u!64 &7750334653760051496
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -373,9 +374,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.85295105, y: 2, z: 0.2859896}
-  m_Center: {x: -0.0010677378, y: 0, z: 0.35700554}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6889115421897014359
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,8 +390,8 @@ GameObject:
   - component: {fileID: 5209075627129168757}
   - component: {fileID: 2650984219440106661}
   - component: {fileID: 4206772394450423622}
-  - component: {fileID: 928537607689577453}
   - component: {fileID: 8649966407533388430}
+  - component: {fileID: 626487528528985059}
   m_Layer: 0
   m_Name: BotonEliminar
   m_TagString: Untagged
@@ -404,13 +406,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6889115421897014359}
-  m_LocalRotation: {x: 0, y: -0.46174863, z: 0, w: 0.8870109}
-  m_LocalPosition: {x: -2.029, y: 0.25, z: 1.47}
-  m_LocalScale: {x: 3, y: 0.24, z: 3}
+  m_LocalRotation: {x: 0.6830127, y: -0.18301266, z: 0.18301266, w: 0.6830127}
+  m_LocalPosition: {x: -2.32, y: 0.27, z: 2.74}
+  m_LocalScale: {x: 2, y: 0.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3351304953924991125}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -55, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -30, z: 0}
 --- !u!33 &5209075627129168757
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -436,7 +438,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b0852b2513160a042a2d0b45d2784e14, type: 2}
+  - {fileID: 2100000, guid: 46528cac1a0056149a4d01b32211b076, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -520,19 +522,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!65 &928537607689577453
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6889115421897014359}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.85295105, y: 2, z: 0.2859896}
-  m_Center: {x: -0.0010677378, y: 0, z: 0.35700554}
 --- !u!114 &8649966407533388430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +534,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cabecaeab1c71f438dadb902881cc3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &626487528528985059
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889115421897014359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &9035940545369025921
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +578,7 @@ Transform:
   m_GameObject: {fileID: 9035940545369025921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 7, y: 0.25, z: 7}
+  m_LocalScale: {x: 7, y: 0.77777, z: 7}
   m_Children: []
   m_Father: {fileID: 3351304953924991125}
   m_RootOrder: 0
@@ -605,7 +608,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8f543e2f90e29b4c902641ab305d195, type: 2}
+  - {fileID: 2100000, guid: 0ef31a9b12c6de142a3e4b1aeaf25524, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -701,11 +704,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d1725f0ac788546b1fef27f721ae1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listaComandos:
+  - 
+  - 
+  - 
+  - 
   condicion: 0
+  strCond: 
   inCiclo: 0
   seleccion: {fileID: 2100000, guid: 9f0b21e3018e0904383f5ca5e58ee4d0, type: 2}
-  ciclo: {fileID: 2100000, guid: 6e5c254bbd5d28741bb33499c6baafac, type: 2}
-  noCiclo: {fileID: 2100000, guid: b8f543e2f90e29b4c902641ab305d195, type: 2}
+  ciclo: {fileID: 2100000, guid: ba2ad784964d99843a0c46f2c9f911b2, type: 2}
+  noCiclo: {fileID: 2100000, guid: 0ef31a9b12c6de142a3e4b1aeaf25524, type: 2}
 --- !u!64 &4800930036004080343
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2537690718854337384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.9, z: 0}
-  m_LocalScale: {x: 0.10000011, y: 0.10000001, z: 0.10000011}
+  m_LocalScale: {x: 0.10000011, y: 0.2, z: 0.10000011}
   m_Children: []
   m_Father: {fileID: 5687734587607792634}
   m_RootOrder: 0
@@ -84,7 +84,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 40
+  m_FontSize: 60
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -123,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 2915956962081017719}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_Children:
   - {fileID: 7868474345746493396}
   m_Father: {fileID: 1084368722756317767}
@@ -277,7 +277,7 @@ Rigidbody:
   m_GameObject: {fileID: 2915956962081017719}
   serializedVersion: 2
   m_Mass: 8
-  m_Drag: 0
+  m_Drag: 1.5
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0

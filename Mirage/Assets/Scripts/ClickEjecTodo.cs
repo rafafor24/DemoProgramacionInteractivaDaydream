@@ -31,6 +31,16 @@ public class ClickEjecTodo : MonoBehaviour
 
     IEnumerator Example()
     {
+        TextMesh elTotal = GameObject.FindGameObjectWithTag("TodoElCodigo").GetComponent<TextMesh>();
+        elTotal.text = "";
+        //valor de cada variable a codigo java
+        var variables = GameObject.FindGameObjectsWithTag("Variable");
+        foreach (GameObject variable in variables)
+        {
+            var scriptVar = variable.GetComponent<Variable>();
+            elTotal.text += "int "+scriptVar.getNombre() + scriptVar.getValue() + ";\n";
+        }
+
         elRenderer.material.color = Color.blue;
         bases = GameObject.FindGameObjectsWithTag("Base");
         foreach (GameObject bas in bases)
@@ -38,6 +48,7 @@ public class ClickEjecTodo : MonoBehaviour
             var theScript = bas.GetComponent<Base>();
             theScript.mostrarCodigo();
             theScript.ejecutarTodos();
+            theScript.agregarCodigoTotal();
             yield return new WaitForSeconds(3);
         }
     }

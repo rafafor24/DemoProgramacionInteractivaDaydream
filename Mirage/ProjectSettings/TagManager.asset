@@ -18,6 +18,7 @@ TagManager:
   - While
   - Asig
   - Cierre
+  - TodoElCodigo
   layers:
   - Default
   - TransparentFX
