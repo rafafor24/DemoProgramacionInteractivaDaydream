@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ba2ad784964d99843a0c46f2c9f911b2, type: 2}
+  - {fileID: 2100000, guid: adc8f98157a23204ca1a9b3cbd1dc9f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inCiclo: 0
-  ciclo: {fileID: 2100000, guid: ba2ad784964d99843a0c46f2c9f911b2, type: 2}
+  ciclo: {fileID: 2100000, guid: adc8f98157a23204ca1a9b3cbd1dc9f8, type: 2}
   noCiclo: {fileID: 2100000, guid: 0ef31a9b12c6de142a3e4b1aeaf25524, type: 2}
   seleccion: {fileID: 2100000, guid: 9f0b21e3018e0904383f5ca5e58ee4d0, type: 2}
 --- !u!64 &2806562863327250090
@@ -713,8 +713,10 @@ MonoBehaviour:
   strCond: 
   inCiclo: 0
   seleccion: {fileID: 2100000, guid: 9f0b21e3018e0904383f5ca5e58ee4d0, type: 2}
-  ciclo: {fileID: 2100000, guid: ba2ad784964d99843a0c46f2c9f911b2, type: 2}
+  ciclo: {fileID: 2100000, guid: adc8f98157a23204ca1a9b3cbd1dc9f8, type: 2}
   noCiclo: {fileID: 2100000, guid: 0ef31a9b12c6de142a3e4b1aeaf25524, type: 2}
+  pos: 0
+  strIds: 
 --- !u!64 &4800930036004080343
 MeshCollider:
   m_ObjectHideFlags: 0
