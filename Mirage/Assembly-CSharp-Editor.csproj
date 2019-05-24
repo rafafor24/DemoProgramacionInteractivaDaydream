@@ -75,6 +75,8 @@
     <Compile Include="Assets\GoogleVR\Editor\GvrEditorSettings.cs" />
     <Compile Include="Assets\GoogleVR\Editor\GvrHeadsetEditor.cs" />
     <Compile Include="Assets\GoogleVR\Editor\InstantPreviewEditor.cs" />
+    <Compile Include="Assets\RockVR\Video\Editor\VideoCaptureEditor.cs" />
+    <Compile Include="Assets\RockVR\Video\Editor\VideoCaptureMenuEditor.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Rmixta/MirageSoloDemo/Mirage/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -321,23 +323,8 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf">
-      <HintPath>D:/Rmixta/MirageSoloDemo/Mirage/Assets/GoogleARCore/SDK/Plugins/Google.Protobuf.dll</HintPath>
-    </Reference>
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>D:/Rmixta/MirageSoloDemo/Mirage/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.100.0">
-      <HintPath>D:/Rmixta/MirageSoloDemo/Mirage/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.100.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.100.0">
-      <HintPath>D:/Rmixta/MirageSoloDemo/Mirage/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.100.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>D:/Rmixta/MirageSoloDemo/Mirage/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.100.0">
-      <HintPath>D:/Rmixta/MirageSoloDemo/Mirage/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.100.0.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>D:/Rmixta/MirageSoloDemo/Mirage/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>

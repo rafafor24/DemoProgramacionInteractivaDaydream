@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/TestScene.unity
+  - enabled: 0
+    path: Assets/Scenes/DayDream.unity
     guid: 69b9513875eef10439cc1da3b5e7f10d
+  - enabled: 0
+    path: Assets/Scenes/CardBoard.unity
+    guid: c1703d38b86763547bf02d8746acb21a
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 110bf8e38ac66ef4d94135b111d51a1c
   m_configObjects: {}

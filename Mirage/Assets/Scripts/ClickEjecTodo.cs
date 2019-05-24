@@ -38,7 +38,7 @@ public class ClickEjecTodo : MonoBehaviour
         foreach (GameObject variable in variables)
         {
             var scriptVar = variable.GetComponent<Variable>();
-            elTotal.text += "int "+scriptVar.getNombre() + scriptVar.getValue() + ";\n";
+            elTotal.text += "int "+scriptVar.getNombre()+" = " + scriptVar.getValue() + ";\n";
         }
 
         elRenderer.material.color = Color.blue;
@@ -47,9 +47,16 @@ public class ClickEjecTodo : MonoBehaviour
         {
             var theScript = bas.GetComponent<Base>();
             theScript.mostrarCodigo();
+            theScript.mostrarEnEjecucion();
             theScript.ejecutarTodos();
             theScript.agregarCodigoTotal();
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.3f);            
+        }        
+
+        foreach (GameObject bas in bases)
+        {
+            var theScript = bas.GetComponent<Base>();
+            theScript.noMostrarEnEjecucion();
         }
     }
 }

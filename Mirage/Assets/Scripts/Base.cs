@@ -37,6 +37,8 @@ public class Base : MonoBehaviour
         transform.parent.LookAt(new Vector3(0f, 0f, -2f));
         pos = 0;
         codigoEscritoTotal = "";
+        var mesh = gameObject.GetComponentInChildren<TextMesh>();
+        mesh.transform.position = new Vector3(mesh.transform.position.x, mesh.transform.position.y + 100f, mesh.transform.position.z);
     }
 
     void Update()
@@ -497,14 +499,14 @@ public class Base : MonoBehaviour
             elWhile.text = "while(" + strCond + ") {";
             visibleCierre = true;
             elCierre.color = new Color(0, 0, 253f / 255f);
-            codigoEscritoTotal += elWhile.text;
+            codigoEscritoTotal += elWhile.text+"\n";
         }
         else if (!(strCond == ""))
         {
             elIf.text = "if(" + strCond + ") {";
             visibleCierre = true;
             elCierre.color = new Color(255f/255f, 201f/255f, 118f / 255f);
-            codigoEscritoTotal += elIf.text;
+            codigoEscritoTotal += elIf.text+ "\n";
         }
         int i = 0;
         string asignacion = listaComandos[i];
@@ -520,7 +522,7 @@ public class Base : MonoBehaviour
         if (visibleCierre)
         {
             elCierre.text += "}";
-            codigoEscritoTotal += "}";
+            codigoEscritoTotal += "}\n";
         }
     }
 
@@ -528,5 +530,32 @@ public class Base : MonoBehaviour
     {
         TextMesh elTotal = GameObject.FindGameObjectWithTag("TodoElCodigo").GetComponent<TextMesh>();
         elTotal.text += codigoEscritoTotal;
+    }
+
+    public void mostrarEnEjecucion()
+    {
+        var efecto = gameObject.GetComponentInChildren<ParticleSystem>();
+        var mesh = gameObject.GetComponentInChildren<TextMesh>();
+        mesh.transform.position = new Vector3(mesh.transform.position.x, mesh.transform.position.y-100f, mesh.transform.position.z);
+        ParticleSystem.MainModule settings = efecto.main;
+        settings.startColor = Color.yellow;
+        efecto.Emit(100);
+        efecto.Play();
+    }
+
+    public void noMostrarEnEjecucion()
+    {
+        var efecto = gameObject.GetComponentInChildren<ParticleSystem>();
+        var mesh = gameObject.GetComponentInChildren<TextMesh>();
+        mesh.transform.position = new Vector3(mesh.transform.position.x, mesh.transform.position.y + 100f, mesh.transform.position.z);
+        efecto.Clear();
+        efecto.Stop();
+    }
+
+    public void ponerVerde()
+    {
+        var efecto = gameObject.GetComponentInChildren<ParticleSystem>();
+        ParticleSystem.MainModule settings = efecto.main;
+        settings.startColor = Color.red;
     }
 }
